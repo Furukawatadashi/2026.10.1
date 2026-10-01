@@ -1,0 +1,423 @@
+@use "global" as *;
+
+//お試しコード用ファイル
+//お試しコード用ファイル
+//お試しコード用ファイル
+//お試しコード用ファイル
+//お試しコード用ファイル
+
+.fvv {
+  height: 500px;
+  max-width: $siteMaxWidth; //マックス幅指定
+  width: 100%;
+  margin-inline: auto;
+
+  background-image: url(../images/house4.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.fvv_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.fvv_title {
+  font-size: myrem(100);
+  color: #f10b0b;
+  font-weight: 500;
+}
+
+///////////////////////////////////
+
+.p-flwo-list {
+  background: #c8f8f4;
+}
+.p-flow-list__items {
+  display: grid;
+
+  @include mq(md) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: myrem(45);
+  }
+}
+
+.p-flow-list__item {
+  position: relative;
+
+  @include mq(md) {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3; //カード内の要素の数を指定する
+    gap: 0;
+  }
+  .p-flow-item__title {
+    font-size: clamp(20px, 2.3vw, 30px);
+  }
+  .p-flow-item__text {
+    font-size: clamp(16px, 1.661vw, 20px);
+  }
+}
+
+.p-flow-list__item:not(:first-child) {
+  margin-top: myrem(50);
+  @include mq(md) {
+    margin-top: myrem(0);
+  }
+}
+
+.p-flow-list__item:not(:last-child)::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: myrem(33);
+  height: myrem(33);
+  background: url(../images/flow-5.webp) no-repeat center / contain;
+
+  bottom: myrem(-40);
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  @include mq(md) {
+    left: initial;
+    right: myrem(-41);
+    top: myrem(101);
+    transform: initial;
+  }
+}
+.p-flow-item__img {
+  aspect-ratio: 1/1;
+  width: 50%;
+  margin-inline: auto;
+  @include mq("md") {
+    width: 90%;
+  }
+}
+.p-flow-item__img img {
+  object-fit: contain;
+  height: auto;
+  width: 100%;
+}
+
+/////////////////////
+// .c-button {
+// 	display: inline-block;
+// 	color: #fff;
+// 	background-color: #333;
+// 	border: solid 1px #333;
+// 	border-radius: 4px;
+// 	text-decoration: none;
+// 	padding: 10px 30px;
+// 	transition: 0.4s;
+// 	position: relative;
+// }
+// .c-button:after {
+// 	position: absolute;
+// 	top: 14px;
+// 	right: 8px;
+// 	content: "\e5e1";
+// 	font-family: "Material Icons";
+//     font-size: 20px;
+// 	transition: 0.4s;
+// }
+
+// .c-button:hover {
+// 	opacity: 0.8;
+// }
+// .c-button:hover:after {
+// 	right: 4px;
+// }
+
+.c-button3 {
+  display: inline-flex; //必須
+  justify-content: center; //必須?
+  align-items: center; //必須
+  gap: 15px; //アイコンとの距離
+
+  min-width: 230px;
+  padding: 10px 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.7;
+  text-decoration: none;
+  color: #333;
+  border-radius: 30px;
+  background: #f8aa60;
+}
+.c-button3__icon {
+  font-size: 25px;
+  color: #8295ff;
+}
+
+// .c-button3::after {
+//   content: "\e5e1";//ここに貼り付け
+//   font-family: "Material Icons";//ここに貼り付け
+//   font-size: 20px; //アイコンの大きさ
+//   margin-left: 11px; //アイコンとの距離
+// }
+/////////////////////////////////
+
+// .p-price__table {
+//   // table-layout: fixed; /* 「幅指定した列以外」の幅を均等にする、指定しないと中の文字数次第でガタガタになる */
+// }
+// .p-price__table th:first-of-type {
+//   // width: 70px; /* タイトル列の幅 */
+// }
+// th,td {
+//   // text-align: center; //文字左右真ん中
+
+//   // height: 30px;  //高さを指定するなら…
+
+//   // vertical-align: center;  //上下中央
+
+// }
+// th {
+// // font-weight: 700;
+// }
+
+//特定のセルをターゲット
+// .p-price__tbody tr:nth-child(5) td:nth-child(2) {
+//     background-color: red;
+// }
+//「nth-child(5)」は下の指定と交換可
+
+// //よく使うことになるので貼っておく
+// :first-child//最初の
+// :last-child // 最後の
+// :nth-child(n+3) //何番目から
+// :nth-child(2)  //何番目
+// // ※何番目は、htmlの記述順で見る
+
+// .grid-table {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr); /* 3つの同じ幅の列 */
+//   gap: 1px; /* 線の太さ */
+//   background-color: #ccc; /* 線の色 */
+// }
+
+// .grid-table > div {
+//   background-color: #fff; /* セルの背景色 */
+//   padding: 8px;
+// }
+
+// .header {
+//   font-weight: bold;
+//   background-color: #eee !important;
+// }
+
+.grid-table {
+  margin-top: myrem(50);
+  padding-bottom: myrem(50);
+}
+.grid-lists {
+  // border: #3710e6 solid 2px; //外枠の線
+  // display: grid;
+
+  // rule: solid green 2px; //中のたてよこ線
+  // row-rule: 3px solid orange;//横の線
+  // column-rule: 3px solid green;//縦線
+  grid-template-columns: 30% 70%;
+}
+
+.grid-list {
+  // border: #3710e6 solid 2px; //外枠の線
+  display: grid;
+
+  // rule: solid green 2px; //中のたてよこ線
+  // row-rule: 3px solid orange;//横の線
+  // column-rule: 3px solid green;//縦線
+  grid-template-columns: 30% 70%;
+}
+
+.grid-list dt {
+  // display: flex;
+  padding-left: myrem(20);
+  font-size: myrem(30);
+  // row-rule: 3px solid orange;//横の線
+  // background: #e3fada;//背景塗るなら
+  border-bottom: 2px solid #ccc;
+}
+.grid-list:first-child dt {
+  border-top: 2px solid #ee1010; //最初のdtだけ
+}
+
+.grid-list dd {
+  padding-left: myrem(20);
+  font-size: myrem(25);
+  // row-rule: 3px solid orange;//横の線
+}
+
+.recrute__list {
+  margin: myrem(30);
+  padding-bottom: myrem(30);
+}
+
+.recrute__items {
+}
+.recrute__item {
+  display: flex;
+}
+
+.recrute__team {
+  max-width: myrem(200);
+  width: 100%;
+  padding: myrem(20);
+  border-top: #3710e6 2px solid;
+}
+
+.recrute__item:last-child .recrute__team {
+  border-bottom: #3710e6 2px solid;
+}
+
+.recrute__description {
+  max-width: myrem(790);
+  width: 100%;
+
+  margin-left: myrem(15);
+  padding: myrem(20);
+  border-top: #3710e6 2px solid;
+}
+
+.recrute__item:last-child .recrute__description {
+  border-bottom: #3710e6 2px solid;
+}
+
+////////////////////////カード実験////////////////
+.p-card1 {
+  background-color: #247871;
+  border-radius: myrem(5);
+  box-shadow: 0 0 myrem(5) myrem(2) rgba($color: #000000, $alpha: 0.1);
+  padding: myrem(30) myrem(20);
+  @include mq(md) {
+    padding: myrem(18) myrem(25) myrem(18) myrem(43);
+    // display: flex;
+    // align-items: center;
+
+    display: grid;
+    align-items: center; //上下センター
+    grid-template-columns: calc(108 / 637 * 100%) 1fr calc(140 / 637 * 100%);
+
+    // grid-template-columns: calc(108 / 637 * 100%) 1fr min(114px, calc(140 / 637 * 100%));
+
+    // grid-template-columns: #{108 / 637}fr 1fr #{140 / 637}fr;
+    min-height: myrem(200);
+  }
+}
+
+.p-card1__img {
+  // width: 60%;
+  margin: 0 auto;
+  @include mq(md) {
+    // width: calc(108 / 637 * 100%);
+    //  width: 35%;
+  }
+}
+
+.p-card1__img img {
+  width: 100%;
+  aspect-ratio: 108 / 96;
+  object-fit: contain;
+}
+
+.p-card1__body {
+  @include mq(md) {
+    // width: calc(327 / 637 * 100%);
+    // flex-grow: 1;
+    // margin-left: myrem(41);
+  }
+}
+
+.p-card1__title {
+  text-align: center;
+  font-size: myrem(24);
+  line-height: calc(48 / 24);
+  font-weight: bold;
+  // font-family: $font-maru;
+  // color: $white;
+  margin-top: myrem(15);
+  @include mq(md) {
+    text-align: left;
+    margin-top: 0;
+  }
+}
+
+.p-card1__text {
+  font-size: myrem(12);
+  font-weight: 500;
+  line-height: calc(22 / 12);
+  // color: $white;
+}
+
+.p-card1__btn {
+  margin-top: myrem(15);
+  text-align: center;
+  @include mq(md) {
+    // width: calc(140 / 637 * 100%);
+    // width: 35%;
+    // margin-left: myrem(25);
+    text-align: center;
+
+    margin-top: 0;
+    background-color: #ccc;
+  
+  }
+}
+
+//////////////////////////////////////////////
+.p-mv {
+  height: calc(100vh - #{myrem(105)});
+  display: flex;
+  position: relative;
+  min-height: myrem(640);
+}
+
+.p-mv__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: myrem(50);
+}
+.p-mv::before {
+  content: "";
+  background-color: #8295ff;
+  display: block;
+  width: calc(410 / 1280 * 100%);
+}
+
+.p-mv__body-wrapper {
+  width: 100%;
+}
+
+.p-mv__cathcopy span {
+  display: inline-block;
+  padding: myrem(6) myrem(13);
+  background-color: #ccc;
+  font-size: myrem(38);
+  line-height: calc(48 / 38);
+}
+.p-mv__cathcopy span:nth-child(n + 2) {
+  margin-top: myrem(16);
+}
+
+.p-mv__text {
+  margin-top: myrem(13);
+  font-size: myrem(14);
+  line-height: calc(28 / 14);
+  width: calc(317 / 1280 * 100%);
+}
+
+.p-mv__img {
+  width: calc(870 / 1280 * 100%);
+}
+.p-mv__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+
+}

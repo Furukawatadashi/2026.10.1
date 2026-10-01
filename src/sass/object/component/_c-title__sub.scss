@@ -1,0 +1,33 @@
+@use "global" as *;
+
+.c-title__sub {
+    // text-align: center;
+  font-size: myrem(26);
+  font-weight: 500;
+  font-family: font-base;
+  color: #7cee4f;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  padding-bottom: myrem(45);
+    // display: block;
+    // max-width: 100%;
+    // overflow-wrap: break-word;
+    // overflow-wrap: anywhere;
+    // word-break: break-all;
+
+  word-break: keep-all;
+  overflow-wrap: anywhere; // keep-all で箱からはみ出す場合の保険
+  line-break: strict;
+
+  @include mq("md") {
+    /* CJKテキストでの折り返しを無効化 */
+    //   word-break: keep-all;
+    // overflow-wrap: anywhere;
+
+    /* 長い単語でも折り返し可能に */
+    //   overflow-wrap: anywhere;
+    
+  }
+
+
+}

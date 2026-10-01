@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.c-section-title2 {
+  text-align: center;
+  font-size: myrem(36);
+  font-weight: 500;
+  font-family: font-base;
+  color: #14283c;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  padding-bottom: myrem(45);
+  // position: relative;
+  // line-break: strict は小書き仮名・長音などの禁則のみ。
+  // 日本語の途中改行を抑えるには word-break: keep-all が必要。
+  word-break: keep-all;
+  overflow-wrap: anywhere; // keep-all で箱からはみ出す場合の保険
+  line-break: strict;
+}
+
+// .c-section-title2::before {
+//   position: absolute;
+//   content: "";
+//   width: 1px;
+//   height: myrem(34);
+//   display: inline-block;
+//   background-color: #2878aa;
+//   bottom: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+// }

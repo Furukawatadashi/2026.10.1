@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "gulp-webp": "^5.1.0",
+    "merge-stream": "^2.0.0"
+  }
+}

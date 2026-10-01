@@ -1,0 +1,67 @@
+@use "global" as *;
+
+// インナー幅＋余白
+$breakpointInner: $innerWidth + strip-unit($padding-pc) * 2;
+
+// ルートフォント設定
+html {
+  // ~ 375px
+  @media (max-width: 375px) {
+    font-size: vw(375, 16);
+  }
+
+  // 376px ~ 767px
+  font-size: 100%;
+
+  // 768px ~ インナー幅＋余白
+  @include mq(md) {
+    font-size: vw(strip-unit($breakpointInner), 16);
+  }
+
+  // インナー幅＋余白 ~
+  @media (min-width: $breakpointInner) {
+    font-size: 100%;
+  }
+}
+
+//スムーススクロール　jsで実装する時は消す
+
+// html {
+//   scroll-behavior: smooth;
+//  scroll-padding-top: 60px;
+// }
+
+// ホバーは、PCのみ
+a,
+button {
+  @include mq(md) {
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.7; //案件次第(色反転ボタンがあればボタン自体に「opacity: 1;」を指定しておく）
+      cursor: pointer;
+    }
+  }
+}
+
+// フォント、ベースカラー設定
+body {
+  font-family: $font-base;
+  color: $color-text-base;
+  font-size: $fz-base;
+  font-weight: $fw-base;
+  line-height: $lh-base;
+  letter-spacing: $ls-base;
+  @include mq("md") {
+    font-size: $fz-base;
+    font-weight: $fw-base;
+    line-height: $lh-base;
+    letter-spacing: $ls-base;
+  }
+  background-color: $color-back-base;
+  // background-color: #fdebff;//作業用
+  // background-color: #9e8ba0;//作業用
+
+
+ 
+}
+

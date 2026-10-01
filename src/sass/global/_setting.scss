@@ -1,0 +1,107 @@
+@use "sass:math";
+
+// ブレイクポイント
+$breakpoints: (
+  sm: 600,
+  //元600
+  md: 768,
+  //ここを800にすると早々とスマホメニューになる.元768
+  lg: 1024,
+  //mdをtab扱いするときはここからPCデザインと考える.元1024
+  xl: 1440,
+  //1440
+);
+
+// メディアクエリ
+$mediaquerys: (
+  sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
+  md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
+  lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
+  xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
+  );
+  
+  // メディアクエリを "@include mq(){}" で書くことができる
+  @mixin mq($mediaquery: md) {
+    @media #{map-get($mediaquerys, $mediaquery)} {
+      @content;
+    }
+  }
+  
+  //////////////////////////////////////////
+
+
+
+// 余白
+// ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
+$padding-pc: 25px;
+
+
+
+//SP余白（案件ごとにカンプの余白確認）
+$padding-sp: 18px;
+
+// PCインナー幅(案件ごと)
+$innerWidth: 1200px;
+
+// サイト全体の最大幅（超大画面で広がりすぎないように）
+$siteMaxWidth: 2000px;
+
+// フォント(案件ごと)
+//base設定
+$font-base: "Noto Sans JP", sans-serif;
+//↓ここはpxで書く↓
+$fz-base: 15px; // ベースフォントサイズ//
+$fw-base: 500; // ベースフォントウェイト
+$lh-base: calc(24 / 15); // ベ-スラインハイト
+$ls-base: 0.05em; //ベースレタースペーシング
+
+$font-eng: "inter", sans-serif; // 英字
+$font-sub: "Roboto", sans-serif;
+
+//フォントウエイト
+$w-regular:300;
+$w-normal:400;
+$w-medium:500;
+$w-bold:700;
+
+// 色指定(案件ごと)
+//フォントカラー
+$color-text-base: #14283c; //base設定
+$color-text-sub: #ffffff; 
+$color-text-sub2: #6c6e6f; 
+
+
+//背景
+$color-back-base: #fff; //base設定
+$color-back-sub: #F4FBFD; 
+
+$color-accent: #FF8B71; // アクセントカラー
+$color-accent-sub: #82BFED; // アクセントカラー
+$color-accent-sub2: #C6ECEC; // アクセントカラー
+
+// $accent-color-active: F2F6FA; // アクセントカラー（アクティブ）
+// $text-color-reverse: #000; // リバーステキストカラー
+// $link-color:  red; // リンクカラー
+
+
+// // アウトラインチェッカー
+
+
+// * {
+// 	outline: 1px solid coral
+// }
+
+
+// // アウトラインチェッカー
+
+
+// // アウトラインチェッカー
+
+
+// * {
+// 	outline: 1px solid coral
+// }
+
+
+// // アウトラインチェッカー
+

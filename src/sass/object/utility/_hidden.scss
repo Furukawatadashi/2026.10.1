@@ -1,0 +1,48 @@
+@use "global" as *;
+
+
+
+// ---
+// 非表示
+// ---
+
+// PC時に非表示
+.u-hidden-pc {
+	@include mq("md") {
+		display: none;
+	}
+}
+
+// スマホ時に非表示
+.u-hidden-sp {
+	display: none;
+	@include mq("md") {
+		display: block;
+	}
+}
+
+
+// PC時のみ表示
+.is-sp {
+	@include mq("md") {
+		display: none;
+	}
+}
+
+// スマホ時のみ表示
+.is-pc {
+	display: none;
+	@include mq("md") {
+		display: block;
+	}
+}
+
+
+
+//	display: block;がイタズラするときがあるのであまり使わない方向で慣れていく
+
+
+//トップへ戻るボタン用
+.is-hidden {
+  display: none ;
+}

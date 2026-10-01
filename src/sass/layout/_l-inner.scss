@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.l-inner {
+  width: 100%;
+  padding-right: myrem(strip-unit($padding-sp));
+  padding-left: myrem(strip-unit($padding-sp));
+  margin-inline: auto;
+  @include mq(md) {
+    max-width: $innerWidth + $padding-pc * 2;
+    padding-right: myrem(strip-unit($padding-pc));
+    padding-left: myrem(strip-unit($padding-pc));
+  }
+}
+// リキッドレイアウトしない時
+// .l-inner {
+//   width: 100%;
+//   max-width: calc(1000px + ($padding-sp) * 2);
+//   padding: 0 ($padding-sp);
+//   margin-inline: auto;
+//   @include mq(md) {
+//     max-width: calc(1000px + ($padding-pc) * 2);
+//     padding: 0 ($padding-pc);
+//   }
+// }
+
+//同じインナー幅が数か所あったらこれを導入
+.l-inner-s {
+  width: 100%;
+  padding-right: myrem(strip-unit($padding-sp));
+  padding-left: myrem(strip-unit($padding-sp));
+  margin-inline: auto;
+  @include mq("md") {
+    max-width: calc(800px + 15px * 2); //カンプ次第
+    padding: 0 15px; //カンプ次第
+  }
+}

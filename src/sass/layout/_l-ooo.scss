@@ -1,0 +1,13 @@
+@use "global" as *;
+
+
+
+.l-ooo {
+
+ padding-top: 60px;
+//  padding-bottom: 60px;
+  @include mq('md'){
+
+}
+  
+}

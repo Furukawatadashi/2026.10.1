@@ -1,0 +1,112 @@
+@use "global" as *;
+
+.c-madia {
+
+
+ 
+
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+.c-madia__img {
+  width: 100%;
+  @include mq("md") {
+    max-width: myrem(280);
+  }
+}
+.c-madia__img img {
+  aspect-ratio: 280/210;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.c-madia__textblock {
+  padding-top: myrem(20);
+  // max-width: re(660);
+  @include mq("md") {
+    // padding-left: re(40);
+    padding-top: 0;
+    margin-left: myrem(40);
+  }
+}
+.c-madia__head {
+  display: flex;
+  text-align: center;
+  padding-top: myrem(19);
+}
+.c-madia__category {
+  font-size: myrem(15);
+  // font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 2;
+  color: #2878aa;
+  padding-right: myrem(15);
+  position: relative;
+}
+.c-madia__category::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: myrem(14);
+  background-color: #96A6B8;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.c-madia__time {
+  margin-left: myrem(11);
+
+  font-size: myrem(13);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  line-height: 2;
+  color: #14283c;
+}
+.c-madia__summary {
+  margin-top: myrem(9);
+  font-size: myrem(23);
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  color: #14283c;
+//ここから下は、ワードプレス化するならその時でいいらしいので消してよし
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.c-madia__lead {
+  margin-top: myrem(10);
+  font-size: myrem(15);
+
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  color: #14283c;
+  //ここから下は、ワードプレス化するならその時でいいらしいので消してよし
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  
+}
+
+
+//ここからお試し半田さん
+
+
+// .c-madia__img {
+//   width: 100%;
+//   @include mq("md") {
+//     // flex:0 0  calc(#{re(280)} / #{re(980)}  * 100%);
+//       //  width: calc(100% - #{re(48)});
+//   }
+// }
+
+ 
